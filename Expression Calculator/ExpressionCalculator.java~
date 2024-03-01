@@ -1,0 +1,82 @@
+public class ExpressionCalculator {
+  
+  String[] tokens = new String[1];
+  Parse thing = new Parse();
+  int result=0;
+  int i;
+  
+  public int expCalc(String s) {
+    if((s.indexOf("-") == -1) && (s.indexOf("*") == -1) && (s.indexOf("/") == -1) && (s.indexOf("+") == -1)) {
+      result = thing.parseInt(s);
+    }
+    if(s.indexOf("+") != -1) {
+      String[] tokens = s.split("[+]");
+      for(i=0; i<tokens.length; i++)
+      {
+       System.out.println("this is token["+i+"] in add: "+tokens[i]);
+      }
+      if((s.indexOf("-") == -1) && (s.indexOf("*") == -1) && (s.indexOf("/") == -1)) {
+      for(i=0; i<tokens.length; i++) {
+        System.out.println("Hi");
+        result = result + thing.parseInt(tokens[i]);
+        System.out.println("This is result"+i+": "+result);
+      }
+      } else {
+        for(i=0; i<tokens.length; i++) {
+          result = (result + expCalc(tokens[i]));
+          System.out.println("This is result"+i+" "+result);
+      }
+    }
+    }
+    if(s.indexOf("-") != -1) {
+      System.out.println("Hi2");
+      String[] tokens = s.split("[-]");
+      for(i=0; i<tokens.length; i++)
+      {
+       System.out.println("this is token["+i+"] in sub: "+tokens[i]);
+      }
+      if((s.indexOf("*") == -1) && (s.indexOf("/") == -1)) {
+      for(i=0; i<tokens.length; i++) {
+        result = result + thing.parseInt(tokens[i]);
+      }
+      } else{
+        for(i=0; i<tokens.length; i++) {
+        result = (result + expCalc(tokens[i]));
+      }
+    }
+    }
+    if(s.indexOf("*") != -1) {
+      System.out.println("Hi3");
+      String[] tokens = s.split("[*]");
+      for(i=0; i<tokens.length; i++)
+      {
+       System.out.println("this is token["+i+"] in multi: "+tokens[i]);
+      }
+      if(s.indexOf("/") == -1) {
+      for(i=0; i<tokens.length; i++) {
+        result = result + thing.parseInt(tokens[i]);
+      }
+      } else {
+        for(i=0; i<tokens.length; i++) {
+        result = (result + expCalc(tokens[i]));
+      }
+    }
+    }
+    if(s.indexOf("/") != -1) {
+      System.out.println("Hi4");
+      String[] tokens = s.split("[/]");
+      for(i=0; i<tokens.length; i++)
+      {
+       System.out.println("this is token["+i+"] in div: "+tokens[i]);
+      }
+      for(i=0; i<tokens.length; i++) {
+      result = (result + thing.parseInt(tokens[i]));
+      }
+    }
+    return result;
+   /* switch(s) {
+      case exp+"+"+exp2:
+        System.out.println("the number is " +parseInt(exp+exp2)); */
+        
+  }
+}

@@ -1,0 +1,56 @@
+The person’s info is:
+Name: Matt
+SS Number: 129455777
+Age: 35 years
+Gender: Male
+Address: 142 Wallaby Way
+Phone Number: 1028944771
+
+The student’s info is:
+Name: Samantha
+SS Number: 255623951
+Age: 22 years
+Gender: Female
+Address: 201 Rainbow Road
+Phone Number: 1161254713
+GPA: 4.0
+Major: Elementary Education
+Graduation Year: 2025
+
+The employee’s info is:
+Name: Phil
+SS Number: 145598387
+Age: 51 years
+Gender: Male
+Address: 258 Harrison Avenue
+Phone Number: 1089694512
+Department: Human Resources
+Job Title: Employee Satisfaction Manager
+Year of Hire: 1992
+
+The hourly employee’s info is:
+Name: Ashley
+SS Number: 455724521
+Age: 28 years
+Gender: Female
+Address: 615 Peach Park
+Phone Number: 1158479131
+Department: Catering
+Job Title: Executive Chef
+Year of Hire: 2005
+Hourly Rate: $15.75/hr
+Hours Worked: 48.5
+Union Dues: $580.54
+
+The salaried employee’s info is:
+Name: Walter
+SS Number: 974522367
+Age: 46 years
+Gender: Male
+Address: 305 Sixth Street
+Phone Number: 1059143546
+Department: Security
+Job Title: Night Shift Officer
+Year of Hire: 1989
+Annual Salary: $54000.0/yr
+

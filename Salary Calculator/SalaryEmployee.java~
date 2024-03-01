@@ -1,0 +1,33 @@
+public class SalaryEmployee extends Employee
+{
+ // new Data Fields
+  private double annualsalary;
+  
+ // constructor
+  public SalaryEmployee(String firstname, int ssnum, int yrage,
+  String gen, String ad, int phonenum, String dep, String job, int yrhired,
+  double annsal)
+  {
+  super(firstname, ssnum, yrage, gen, ad, phonenum, dep, job, yrhired);
+  annualsalary = annsal;
+  }
+  
+ // new methods
+  public double getAnnualsalary() {
+  return annualsalary;
+  }
+  public String toString()
+  {
+  String result = "Name: " + name
+  + "\nSS Number: " + ssnumber
+  + "\nAge: " + age + " years"
+  + "\nGender: " + gender
+  + "\nAddress: " + address
+  + "\nPhone Number: " + phonenumber
+  + "\nDepartment: " + department
+  + "\nJob Title: " + jobtitle
+  + "\nYear of Hire: " + yearofhire
+  + "\nAnnual Salary: $" + annualsalary + "/yr";
+  return result;
+  }
+} // end of class

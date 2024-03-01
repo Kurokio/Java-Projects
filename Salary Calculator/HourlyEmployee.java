@@ -1,0 +1,36 @@
+public class HourlyEmployee extends Employee
+{
+ // new Data Fields
+  private double hourlyrate;
+  private double hoursworked;
+  private double uniondues;
+  
+ // constructor
+  public HourlyEmployee(String firstname, int ssnum, int yrage,
+  String gen, String ad, int phonenum, String dep, String job, int yrhired,
+  double hrrate, double hrswrk, double undue)
+  {
+  super(firstname, ssnum, yrage, gen, ad, phonenum, dep, job, yrhired);
+  hourlyrate = hrrate;
+  hoursworked = hrswrk;
+  uniondues = undue;
+  }
+  
+ // new methods
+  public String toString()
+  {
+  String result = "Name: " + name
+  + "\nSS Number: " + ssnumber
+  + "\nAge: " + age + " years"
+  + "\nGender: " + gender
+  + "\nAddress: " + address
+  + "\nPhone Number: " + phonenumber
+  + "\nDepartment: " + department
+  + "\nJob Title: " + jobtitle
+  + "\nYear of Hire: " + yearofhire
+  + "\nHourly Rate: $" + hourlyrate + "/hr"
+  + "\nHours Worked: " + hoursworked
+  + "\nUnion Dues: $" + uniondues;
+  return result;
+  }
+} // end of class

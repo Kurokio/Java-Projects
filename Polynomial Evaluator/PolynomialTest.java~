@@ -1,0 +1,142 @@
+import java.util.Scanner;
+
+public class PolynomialTest 
+ {
+
+ private static class Node
+ {
+ private int coef;
+ private int expo;
+ public Node next;
+
+ public Node(int c, int e, Node n)
+ {
+ coef = c;
+ expo = e;
+ next = n;
+ }
+
+ public int getCoef()
+ {
+ return coef;
+ }
+
+ public int getExpo()
+ {
+ return expo;
+ }
+
+ public Node getNext()
+ {
+ return next;
+ }
+
+ public void setNext(Node n)
+ {
+ next = n;
+ }
+ }
+
+ private Node head = null;
+ private Node tail = null;
+ private int size = 0;
+
+ public int size()
+ {
+ return size;
+ }
+
+ public void addTerm(int c, int e)
+ {
+ Node newest = new Node(c, e, null);
+
+ if( isEmpty() )
+ {
+ head = newest;
+ }
+
+ else
+ {
+ tail.setNext(newest);
+ }
+
+ tail = newest;
+ size++;
+ }
+
+ public void print()
+ {
+ String poly = "";
+
+ for(Node i = head; i != null; i = i.next)
+ {
+ if(i.coef > 0)
+ {
+
+ poly = poly + " + " + i.coef + "x^" + i.expo;
+ }
+
+ else if(i.coef < 0)
+ {
+ poly = poly + " - " + (-i.coef) + "x^" + i.expo;
+ }
+ }
+
+ System.out.println(poly + "\n");
+ }
+
+ public Polynomial add(Polynomial b)
+ {
+ Polynomial a = this;
+ Polynomial c = new Polynomial();
+ Node x = a.head;
+ Node y = b.head;
+
+ while( x!= null || y != null)
+ {
+ Node t = null;
+ if (x == null)
+ {
+ t = new Node(y.coef, y.expo, y.next);
+}
+
+ else if (y == null)
+ { 
+   t = new Node(x.coef, x.expo, x.next);
+ }
+
+ else if (x.expo > y. expo)
+ {
+ t = new Node(x.coef, x.expo, x.next);
+ }
+
+ else if (x.expo < y.expo)
+ {
+ t = new Node(y.coef, y.expo, y.next);
+ }
+
+ else
+ {
+ int coef = x.coef + y.coef;
+ int expo = x.expo;
+ Node next = y.next;
+
+ x = x.next;
+ y = y.next;
+
+ if (coef == 0)
+ {
+ continue;
+ }
+
+ t = new Node(coef, expo, next);
+ }
+
+ c.tail.next = t;
+ c.tail = c.tail.next;
+
+ }
+
+ return c;
+ }
+}
